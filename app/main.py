@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from fastapi.params import Body
 from pydantic import BaseModel
-import api_key
+from app.api_key import get_key
 app = FastAPI()
 
 from pymongo.mongo_client import MongoClient
 
-uri = api_key.get_key("MONGO_URI")
-
+uri = get_key("MONGO_URI")
+print(uri)
 # Create a new client and connect to the server
 client = MongoClient(uri)
 
