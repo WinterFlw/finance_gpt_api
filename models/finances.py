@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 #구현중
-class finance(BaseModel):
+class Finance(BaseModel):
     stock: str
-    price: int
+    price: str
     news: str

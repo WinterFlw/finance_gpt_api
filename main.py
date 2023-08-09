@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from api_key import get_key
 from routes.route import router
 
 app = FastAPI()

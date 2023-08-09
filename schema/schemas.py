@@ -6,5 +6,6 @@ def individual_serial(finance) -> dict:
         "news": finance["news"]
     }
 
+
 def list_serial(finances) -> list:
     return[individual_serial(finance) for finance in finances]
