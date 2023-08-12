@@ -1,8 +1,7 @@
 # security
 __init__.py
-test.py
+test/
 api_key.py
-Finance_api/api_key.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
