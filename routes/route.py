@@ -22,3 +22,7 @@ async def get_finances():
 @router.post("/finances")
 async def post_finance(finance: Finance):
     collection_name.insert_one(dict(finance))
+    
+@router.get("/easteregg")
+async def easteregg():
+    return "https://blog.winterflw.com"
