@@ -1,16 +1,24 @@
+import os
 from fastapi import APIRouter, Form, Request
 from fastapi.templating import Jinja2Templates
+from fastapi.responses import HTMLResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from models.finances import Finance
 from config.database import collection_name
 from schema.schemas import list_serial
 from bson import ObjectId
 
-templates = Jinja2Templates(directory='templates')
 router = APIRouter()
+templates = Jinja2Templates(directory='templates')
+
 # GET index.html
 @router.get("/")
 async def index(request: Request):
     return templates.TemplateResponse("index.html",{"request":request})
+
+@router.get('/favicon.ico')
+async def favicon():
+    return FileResponse("./static/favicon.ico")
 
 # GET Request Method
 @router.get("/finances")
